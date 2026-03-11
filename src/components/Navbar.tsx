@@ -61,7 +61,7 @@ const Navbar = () => {
       <div className="header">
 
         <a href="/#" className="navbar-title" data-cursor="disable">
-          RC
+          CS18
         </a>
 
         <a
