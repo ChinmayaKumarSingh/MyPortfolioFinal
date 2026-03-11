@@ -2,7 +2,7 @@
   width: 1300px;
 }
 
-/* Fix for GSAP SplitText animation */
+/* GSAP SplitText performance fix */
 .title,
 .para {
   font-kerning: none;
@@ -12,17 +12,26 @@
   will-change: transform, opacity;
 }
 
-/* Important for split lines */
+/* Important for GSAP split lines */
 .split-line {
   display: block;
   overflow: hidden;
+  position: relative;
 }
 
-/* Fix heading text animation */
+/* Fix hero text clipping */
 .landing-intro h1,
 .landing-intro h2,
 .landing-info h3 {
-  line-height: 1.2;
+  line-height: 1.1;
+  overflow: hidden;
+  display: block;
+}
+
+/* Fix text stacking during animation */
+.landing-intro h1 span,
+.landing-intro h2 span {
+  display: inline-block;
 }
 
 /* Responsive layout */

@@ -5,10 +5,10 @@ import SplitText from "gsap/SplitText";
 
 import { smoother } from "../Navbar";
 
-// register plugin
 gsap.registerPlugin(SplitText);
 
 export function initialFX() {
+
   document.body.style.overflowY = "auto";
 
   if (smoother) smoother.paused(false);
@@ -22,10 +22,12 @@ export function initialFX() {
     delay: 1,
   });
 
+  /* -------- HERO TEXT -------- */
+
   const landingText = new SplitText(
     [".landing-info h3", ".landing-intro h2", ".landing-intro h1"],
     {
-      type: "chars,lines",
+      type: "lines,chars",
       linesClass: "split-line",
     }
   );
@@ -37,16 +39,19 @@ export function initialFX() {
       opacity: 1,
       duration: 1.2,
       filter: "blur(0px)",
-      ease: "power3.inOut",
+      ease: "power3.out",
       y: 0,
-      stagger: 0.025,
+      stagger: 0.02,
       delay: 0.3,
     }
   );
 
-  const TextProps = { type: "chars,lines", linesClass: "split-h2" };
+  /* -------- SECOND TEXT -------- */
 
-  const landingText2 = new SplitText(".landing-h2-info", TextProps);
+  const landingText2 = new SplitText(".landing-h2-info", {
+    type: "lines,chars",
+    linesClass: "split-line",
+  });
 
   gsap.fromTo(
     landingText2.chars,
@@ -55,10 +60,10 @@ export function initialFX() {
       opacity: 1,
       duration: 1.2,
       filter: "blur(0px)",
-      ease: "power3.inOut",
+      ease: "power3.out",
       y: 0,
-      stagger: 0.025,
-      delay: 0.3,
+      stagger: 0.02,
+      delay: 0.5,
     }
   );
 }
