@@ -22,10 +22,10 @@ export function initialFX() {
     delay: 1,
   });
 
-  /* -------- HERO TEXT -------- */
+  /* ---------------- HERO INTRO TEXT ---------------- */
 
-  const landingText = new SplitText(
-    [".landing-info h3", ".landing-intro h2", ".landing-intro h1"],
+  const introSplit = new SplitText(
+    [".landing-intro h2", ".landing-intro h1", ".landing-info h3"],
     {
       type: "lines,chars",
       linesClass: "split-line",
@@ -33,37 +33,46 @@ export function initialFX() {
   );
 
   gsap.fromTo(
-    landingText.chars,
-    { opacity: 0, y: 80, filter: "blur(5px)" },
+    introSplit.chars,
+    {
+      opacity: 0,
+      y: 80,
+      filter: "blur(5px)"
+    },
     {
       opacity: 1,
-      duration: 1.2,
-      filter: "blur(0px)",
-      ease: "power3.out",
       y: 0,
+      filter: "blur(0px)",
+      duration: 1.2,
+      ease: "power3.out",
       stagger: 0.02,
-      delay: 0.3,
+      delay: 0.3
     }
   );
 
-  /* -------- SECOND TEXT -------- */
+  /* ---------------- ENGINEER / DEVELOPER TEXT ---------------- */
 
-  const landingText2 = new SplitText(".landing-h2-info", {
+  const roleSplit = new SplitText(".landing-info-h2", {
     type: "lines,chars",
     linesClass: "split-line",
   });
 
   gsap.fromTo(
-    landingText2.chars,
-    { opacity: 0, y: 80, filter: "blur(5px)" },
+    roleSplit.chars,
+    {
+      opacity: 0,
+      y: 80,
+      filter: "blur(5px)"
+    },
     {
       opacity: 1,
-      duration: 1.2,
-      filter: "blur(0px)",
-      ease: "power3.out",
       y: 0,
-      stagger: 0.02,
-      delay: 0.5,
+      filter: "blur(0px)",
+      duration: 1.2,
+      ease: "power3.out",
+      stagger: 0.03,
+      delay: 0.6
     }
   );
+
 }
