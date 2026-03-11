@@ -5,14 +5,15 @@ import SplitText from "gsap/SplitText";
 
 import { smoother } from "../Navbar";
 
+// register plugin
 gsap.registerPlugin(SplitText);
 
 export function initialFX() {
   document.body.style.overflowY = "auto";
 
-  smoother.paused(false);
+  if (smoother) smoother.paused(false);
 
-  const main = document.getElementsByTagName("main")[0];
+  const main = document.querySelector("main");
   if (main) main.classList.add("main-active");
 
   gsap.to("body", {

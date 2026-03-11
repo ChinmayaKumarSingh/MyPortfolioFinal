@@ -15,6 +15,7 @@ interface ParaElement extends HTMLElement {
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 export default function setSplitText() {
+
   ScrollTrigger.config({ ignoreMobileResize: true });
 
   if (window.innerWidth < 900) return;
@@ -26,6 +27,7 @@ export default function setSplitText() {
   const ToggleAction = "play pause resume reverse";
 
   paras.forEach((para: ParaElement) => {
+
     para.classList.add("visible");
 
     if (para.anim) {
@@ -57,6 +59,7 @@ export default function setSplitText() {
   });
 
   titles.forEach((title: ParaElement) => {
+
     if (title.anim) {
       title.anim.progress(1).kill();
       title.split?.revert();
