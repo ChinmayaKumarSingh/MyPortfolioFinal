@@ -1,59 +1,48 @@
 import gsap from "gsap";
 import { smoother } from "../Navbar";
 
-export function initialFX() {
+export function initialFX(){
 
-  document.body.style.overflowY = "auto";
+document.body.style.overflowY="auto";
 
-  if (smoother) smoother.paused(false);
+if(smoother) smoother.paused(false);
 
-  const main = document.querySelector("main");
-  if (main) main.classList.add("main-active");
+const main=document.querySelector("main");
+if(main) main.classList.add("main-active");
 
-  gsap.to("body", {
-    backgroundColor: "#0a0e17",
-    duration: 0.5,
-    delay: 1,
-  });
+/* HERO INTRO */
 
-  /* HERO TEXT */
+gsap.from(".landing-intro h2",{
+y:40,
+opacity:0,
+duration:1,
+ease:"power3.out"
+})
 
-  gsap.fromTo(
-    [".landing-info h3", ".landing-intro h2", ".landing-intro h1"],
-    { opacity: 0, y: 60 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: "power3.out",
-      stagger: 0.2,
-      delay: 0.2,
-    }
-  );
+gsap.from(".landing-intro h1",{
+y:60,
+opacity:0,
+duration:1.2,
+delay:.2,
+ease:"power3.out"
+})
 
-  /* DEVELOPER TEXT */
+/* RIGHT TEXT */
 
-  gsap.fromTo(
-    ".landing-info-h2",
-    { opacity: 0, y: 40 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: "power3.out",
-      delay: 0.6,
-    }
-  );
+gsap.from(".landing-info h3",{
+y:40,
+opacity:0,
+duration:1,
+delay:.4,
+ease:"power3.out"
+})
 
-  /* HEADER */
+gsap.from(".landing-info-h2",{
+y:60,
+opacity:0,
+duration:1.2,
+delay:.6,
+ease:"power3.out"
+})
 
-  gsap.fromTo(
-    [".header", ".icons-section", ".nav-fade"],
-    { opacity: 0 },
-    {
-      opacity: 1,
-      duration: 1,
-      delay: 0.2,
-    }
-  );
 }
