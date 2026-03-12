@@ -124,13 +124,13 @@ color:rgb(234,234,234);
 .landing-info{
 position:absolute;
 right:8%;
-top:50%;
+top:55%;
 transform:translateY(-50%);
 z-index:200;
 display:flex;
 flex-direction:column;
 align-items:flex-start;
-gap:10px;
+gap:6px;
 max-width:500px;
 }
 
@@ -143,6 +143,8 @@ font-weight:400;
 color:#ff4d4d;
 margin:0;
 line-height:1.2;
+position:relative;
+top:-10px;
 }
 
 /* MAIN TEXT */
@@ -228,7 +230,8 @@ font-size:60px;
 }
 
 .landing-info-h2{
-font-size:70px;
+font-size:60px;
+margin-top:-5px;
 }
 
 .hero-small{
