@@ -14,7 +14,7 @@
   max-width:var(--cMaxWidth);
 }
 
-/* ================= CIRCLES ================= */
+/* ================= BACKGROUND CIRCLES ================= */
 
 .landing-circle1{
   top:0%;
@@ -55,27 +55,12 @@
   100%{transform:translate(calc(100% - 2px),-50%) rotate(360deg)}
 }
 
-/* ================= NAV FADE ================= */
-
-.nav-fade{
-  position:fixed;
-  top:0;
-  width:100%;
-  height:130px;
-  background-image:linear-gradient(0deg,transparent,var(--backgroundColor) 70%);
-  pointer-events:none;
-  z-index:12;
-  opacity:0;
-  left:0;
-}
-
 /* ================= CHARACTER ================= */
 
 .character-model{
   height:80vh;
   position:absolute;
   max-width:1920px;
-  max-height:1080px;
   transform:translateX(-50%);
   width:100%;
   left:50%;
@@ -87,22 +72,7 @@
   pointer-events:none;
 }
 
-.character-rim{
-  position:absolute;
-  width:400px;
-  height:400px;
-  z-index:1;
-  background-color:#22d3ee;
-  box-shadow:inset 66px 35px 85px rgba(0,180,180,0.65);
-  filter:blur(50px);
-  border-radius:50%;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,100%) scale(1.4);
-  opacity:0;
-}
-
-/* ================= INTRO TEXT ================= */
+/* ================= LEFT INTRO TEXT ================= */
 
 .landing-intro{
   position:absolute;
@@ -122,13 +92,13 @@
 .landing-intro h1{
   margin:0;
   letter-spacing:2px;
-  font-size:28px;
-  line-height:1.2;
-  font-weight:500;
+  font-size:40px;
+  line-height:42px;
+  font-weight:600;
   font-family:"Geist",sans-serif;
 }
 
-/* ================= LANDING INFO ================= */
+/* ================= RIGHT HERO TEXT ================= */
 
 .landing-info{
   position:absolute;
@@ -146,61 +116,17 @@
   margin:0;
 }
 
-/* ===== FIX TEXT OVERLAP ===== */
-
-.landing-info h2{
+.landing-info-h2{
   margin:0;
-  margin-top:-20px;
+  margin-top:-10px;
   margin-left:20px;
   font-family:"Geist",sans-serif;
-  font-weight:600;
-  font-size:32px;
-  line-height:1.2;
-  position:relative;
-  display:block;
-  height:75px;
-  overflow:hidden;
+  font-weight:700;
+  font-size:60px;
+  line-height:65px;
   text-transform:uppercase;
   letter-spacing:2px;
-}
-
-/* animation layers */
-
-.landing-h2-info-1,
-.landing-h2-2{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-}
-
-/* main animated text */
-
-h2.landing-info-h2{
   color:#14b8a6;
-  font-size:42px;
-  margin:0;
-  font-family:"Geist",sans-serif;
-  font-weight:600;
-  position:relative;
-  display:block;
-}
-
-/* remove overlay causing text cut */
-
-.landing-info-h2::after{
-  display:none;
-}
-
-/* ================= GSAP SPLITTEXT FIX ================= */
-
-.split-line{
-  display:block;
-  overflow:hidden;
-}
-
-.landing-info-h2 span{
-  display:inline-block;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -212,15 +138,11 @@ h2.landing-info-h2{
   }
 
   .landing-intro h1{
-    font-size:30px;
+    font-size:45px;
   }
 
-  .landing-info h2{
-    font-size:35px;
-  }
-
-  h2.landing-info-h2{
-    font-size:38px;
+  .landing-info-h2{
+    font-size:55px;
   }
 
 }
@@ -232,15 +154,11 @@ h2.landing-info-h2{
   }
 
   .landing-intro h1{
-    font-size:40px;
+    font-size:50px;
   }
 
-  .landing-info h2{
-    font-size:45px;
-  }
-
-  h2.landing-info-h2{
-    font-size:55px;
+  .landing-info-h2{
+    font-size:65px;
   }
 
 }
@@ -282,24 +200,13 @@ h2.landing-info-h2{
 
 @media screen and (min-width:1600px){
 
-  .landing-intro h2{
-    font-size:35px;
-  }
-
   .landing-intro h1{
-    font-size:60px;
+    font-size:70px;
+    line-height:75px;
   }
 
-  .landing-info h3{
-    font-size:35px;
-  }
-
-  .landing-info h2{
-    font-size:65px;
-  }
-
-  h2.landing-info-h2{
-    font-size:75px;
+  .landing-info-h2{
+    font-size:85px;
   }
 
 }

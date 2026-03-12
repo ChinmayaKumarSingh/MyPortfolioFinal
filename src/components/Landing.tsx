@@ -4,10 +4,14 @@ import "./styles/Landing.css";
 const Landing = ({ children }: PropsWithChildren) => {
   return (
     <div className="landing-section" id="landingDiv">
+
       <div className="landing-container">
+
+        {/* LEFT SIDE */}
 
         <div className="landing-intro">
           <h2>Hello! I'm</h2>
+
           <h1>
             CHINMAYA
             <br />
@@ -15,12 +19,16 @@ const Landing = ({ children }: PropsWithChildren) => {
           </h1>
         </div>
 
+        {/* RIGHT SIDE */}
+
         <div className="landing-info">
+
           <h3>A SOFTWARE</h3>
 
           <h2 className="landing-info-h2">
-            <span className="landing-h2-1">Developer</span>
-            <span className="landing-h2-2">Engineer</span>
+            DEVELOPER
+            <br />
+            ENGINEER
           </h2>
 
         </div>
