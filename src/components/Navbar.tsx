@@ -1,36 +1,33 @@
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import HoverLinks from "./HoverLinks";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { gsap } from "gsap";
-import ScrollSmoother from "gsap/ScrollSmoother";
+
+import HoverLinks from "./HoverLinks";
 import "./styles/Navbar.css";
 
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export let smoother: ScrollSmoother;
 
 const Navbar = () => {
-
   useEffect(() => {
 
     smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
-      smooth: 1.7,
-      speed: 1.7,
+      smooth: 1.5,
       effects: true,
-      autoResize: true,
-      ignoreMobileResize: true,
     });
 
     smoother.scrollTop(0);
     smoother.paused(true);
 
-    const links = document.querySelectorAll(".header ul a");
+    let links = document.querySelectorAll(".header ul a");
 
     links.forEach((elem) => {
 
-      const element = elem as HTMLAnchorElement;
+      let element = elem as HTMLAnchorElement;
 
       element.addEventListener("click", (e) => {
 
@@ -38,20 +35,15 @@ const Navbar = () => {
 
           e.preventDefault();
 
-          const target = e.currentTarget as HTMLAnchorElement;
+          let elem = e.currentTarget as HTMLAnchorElement;
+          let section = elem.getAttribute("data-href");
 
-          const section = target.getAttribute("data-href");
-
-          if (section) smoother.scrollTo(section, true, "top top");
+          smoother.scrollTo(section, true, "top top");
 
         }
 
       });
 
-    });
-
-    window.addEventListener("resize", () => {
-      ScrollSmoother.refresh(true);
     });
 
   }, []);
@@ -60,20 +52,18 @@ const Navbar = () => {
     <>
       <div className="header">
 
-        <a href="/#" className="navbar-title" data-cursor="disable">
+        <a href="/#" className="navbar-title">
           CS18
         </a>
 
         <a
           href="mailto:chinmayasingh.work@gmail.com"
           className="navbar-connect"
-          data-cursor="disable"
         >
           chinmayasingh.work@gmail.com
         </a>
 
         <ul>
-
           <li>
             <a data-href="#about" href="#about">
               <HoverLinks text="ABOUT" />
@@ -91,7 +81,6 @@ const Navbar = () => {
               <HoverLinks text="CONTACT" />
             </a>
           </li>
-
         </ul>
 
       </div>
