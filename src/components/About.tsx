@@ -9,7 +9,7 @@ const About = () => {
           <h2 className="about-title">About Me</h2>
 
           <p>
-            <strong>Full Stack Engineer | Java & React Specialist</strong>
+            <strong>Full Stack Developer | Java & React Specialist</strong>
           </p>
 
           <p>
