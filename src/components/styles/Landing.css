@@ -53,7 +53,7 @@ transform:translateX(-50%);
 width:100%;
 left:50%;
 bottom:40px;
-z-index:1;
+z-index:0;   /* FIX */
 pointer-events:none;
 }
 
@@ -96,7 +96,7 @@ opacity:.7;
 
 .landing-intro{
 position:absolute;
-z-index:50;
+z-index:100;  /* FIX */
 top:12%;
 left:0;
 }
@@ -126,7 +126,7 @@ position:absolute;
 right:5%;
 top:55%;
 transform:translateY(-50%);
-z-index:60;
+z-index:120;  /* FIX */
 display:flex;
 flex-direction:column;
 align-items:flex-start;
@@ -142,8 +142,8 @@ letter-spacing:2px;
 font-weight:300;
 color:#d22525;
 margin:0;
-z-index:70;
 position:relative;
+z-index:130; /* FIX */
 }
 
 /* MAIN TEXT */
