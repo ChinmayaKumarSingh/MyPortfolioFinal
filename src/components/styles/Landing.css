@@ -51,7 +51,7 @@
     width: 100%;
     left: 50%;
     bottom: 40px;
-    z-index: 0;
+    z-index: 5; /* Lower than text */
     pointer-events: none;
 }
 
@@ -106,36 +106,34 @@
     color: rgb(234, 234, 234);
 }
 
-/* RIGHT TEXT - FIXED OVERLAP */
+/* RIGHT TEXT - UPDATED TO PREVENT OVERLAP */
 .landing-info {
     position: absolute;
-    right: 5%;
-    top: 55%;
+    right: 2%; /* Pushed to the extreme right */
+    top: 50%;
     transform: translateY(-50%);
-    z-index: 200;
+    z-index: 200; /* Stays above character */
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     text-align: right;
-    gap: 6px;
-    max-width: 450px;
+    gap: 4px;
+    max-width: 350px; /* Narrower container to keep it away from center */
 }
 
 /* SMALL TEXT */
 .hero-small {
-    font-size: 28px;
+    font-size: 24px;
     letter-spacing: 2px;
     font-weight: 400;
     color: #ff4d4d;
     margin: 0;
     line-height: 1.2;
-    position: relative;
-    top: -10px;
 }
 
 /* MAIN TEXT */
 .landing-info-h2 {
-    font-size: 55px;
+    font-size: 48px; /* Slightly smaller to fit without overlapping character's head */
     font-weight: 900;
     color: #d9dee1;
     letter-spacing: 1px;
@@ -155,7 +153,7 @@
 @media screen and (max-width: 1024px) {
     .landing-info {
         top: auto;
-        bottom: 8%;
+        bottom: 5%;
         right: 50%;
         transform: translateX(50%);
         align-items: center;
@@ -163,14 +161,14 @@
         max-width: 90%;
     }
     .landing-info-h2 {
-        font-size: 42px;
+        font-size: 36px;
         white-space: normal;
     }
 }
 
 @media screen and (min-width: 768px) {
     .landing-intro h1 { font-size: 48px; line-height: 50px; }
-    .hero-small { font-size: 30px; }
+    .hero-small { font-size: 28px; }
 }
 
 @media screen and (min-width: 1025px) {
@@ -181,18 +179,18 @@
     }
     .landing-intro {
         top: 50%;
-        left: 5%;
+        left: 3%;
         transform: translateY(-50%);
     }
     .landing-info {
         top: 50%;
-        right: 5%;
+        right: 3%;
         transform: translateY(-50%);
     }
 }
 
 @media screen and (min-width: 1600px) {
     .landing-intro h1 { font-size: 60px; }
-    .landing-info-h2 { font-size: 65px; margin-top: -5px; }
-    .hero-small { font-size: 34px; }
+    .landing-info-h2 { font-size: 55px; }
+    .hero-small { font-size: 30px; }
 }
